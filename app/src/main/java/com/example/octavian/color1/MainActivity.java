@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                                     getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + colors.get(1).toString())));
+                                    getSupportActionBar().setTitle((CharSequence) obj.get("title"));
 
                                     findViewById(R.id.button13).setBackgroundColor(Color.parseColor("#" + colors.get(2).toString()));
 
