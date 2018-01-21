@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                                 try {
                                     jsonArray = new JSONArray(response);
                                     JSONObject obj = jsonArray.getJSONObject(0);
-                                    JSONArray colors = obj.getJSONArray("colors"); //INKONSITENZ, wenn eure Webseite COLOURlovers heißt, dann heißt der Key hier gefälligst auch "colour"
+                                    JSONArray colors = obj.getJSONArray("colors"); //INKONSISTENZ, wenn eure Webseite COLOURlovers heißt, dann heißt der Key hier gefälligst auch "colour"
 
                                     // set colors
                                     window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -75,21 +75,13 @@ public class MainActivity extends AppCompatActivity {
                                     Log.e("COLORCODE", colors.get(0).toString());
                                     window.setStatusBarColor(Color.parseColor("#" + colors.get(0).toString()));
 
-                                    ResourcesCompat.getColor(getResources(), R.color.colorPrimary, null);
-                                    //Log.e("THEME",);
-
-
                                     getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#" + colors.get(1).toString())));
                                     getSupportActionBar().setTitle((CharSequence) obj.get("title"));
 
                                     findViewById(R.id.button13).setBackgroundColor(Color.parseColor("#" + colors.get(2).toString()));
-
                                     findViewById(R.id.switch1).setBackgroundColor(Color.parseColor("#" + colors.get(2).toString()));
                                     findViewById(R.id.switch1).setDrawingCacheBackgroundColor(Color.parseColor("#" + colors.get(3).toString()));
-
                                     findViewById(R.id.checkBox).setBackgroundColor(Color.parseColor("#" + colors.get(4).toString()));
-
-
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
